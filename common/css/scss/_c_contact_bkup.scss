@@ -1,0 +1,143 @@
+/* Scss Document */
+
+// contact ------------------------------
+.contact {
+	@include space;
+	&--inner {
+		max-width: 700px;
+	}
+	&__document {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		@include font-size(18);
+		line-height: 1.8;
+		margin: 0 auto 40px;
+		@include media(sp) {
+			flex-flow: column;
+			margin: 0 20px 30px;
+		}
+		ul {
+			width: 60%;
+			@include media(sp) {
+				width: 100%;
+				margin-bottom: 20px;
+			}
+			li {
+				position: relative;
+				padding-left: 20px;
+				&:after {
+					display: block;
+					content: '';
+					position: absolute;
+					top: .5em;
+					left: 0;
+					width: 8px;
+					height: 3px;
+					border-left: 2px solid $color-sub2;
+					border-bottom: 2px solid $color-sub2;
+					transform: rotate(-45deg);
+				}
+			}
+		}
+		figure {
+			width: 40%;
+			text-align: right;
+			margin: 0 auto;
+			@include media(sp) {
+				width: 100%;
+				max-width: 350px;
+				text-align: center;
+			}
+		}
+	}
+	&__btn {
+		margin: 0 auto 40px;
+		@include media(sp) {
+			margin: 0 20px 30px;
+		}
+		a {
+			display: block;
+			width: 100%;
+			color: white;
+			background: $color-type01;
+			padding: 20px 0;
+			text-align: center;
+			@include font-size(30);
+			border-radius: 10px;
+			@include hoverOpc;
+			@include media(sp) {
+				@include font-size(21);
+			}
+		}
+	}
+	&__box {
+		background: white;
+		border: 1px solid $color-main;
+		@include media(sp) {
+			margin: 0 20px;
+		}
+	}
+	&__title {
+		background: $color-main;
+		text-align: center;
+		@include font-size(20);
+		font-weight: 400;
+		color: white;
+		padding: 10px 0;
+	}
+	&__address {
+		display: flex;
+		flex-flow: row nowrap;
+		@include media(sp) {
+			flex-flow: column;
+		}
+		dl {
+			width: 60%;
+			padding: 15px 0 0 25px;
+			@include media(sp) {
+				width: 100%;
+				padding: 20px;
+			}
+			dt {
+				@include font-size(18);
+				&:nth-of-type(2) {
+					margin-bottom: 5px;
+				}
+			}
+			dd {
+				&.contact--tel {
+					@include font-size(20);
+					margin-bottom: 5px;
+					span a {
+						@include font-size(36);
+						color: darkorange;
+						@include media(sp) {
+							@include font-size(30);
+						}
+					}
+				}
+				&.contact--jma-address {
+					@include font-size(13);
+					a {
+						display: inline-block;
+						margin-bottom: 10px;
+						@include hoverOpc;
+					}
+				}
+			}
+		}
+		figure {
+			width: 40%;
+			@include media(sp) {
+				display: none;
+			}
+			img {
+				width: 100%;
+			}
+		}
+	}
+	&__jmaLogo {
+		max-width: 200px;
+	}
+}
